@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Merchex</title>
-</head>
+{% extends 'listings/base.html' %}
 
-<body>
+{% block content %}
 
     <h1>Listing</h1>
     <p>Liste des annonces : </p>
@@ -15,6 +10,4 @@
         {% endfor %}
     </ul>
 
-</body>
-
-</html>
+{% endblock %}
