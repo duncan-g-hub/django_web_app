@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merchex</title>
+</head>
+
+<body>
+
+    <h1>Listing</h1>
+    <p>Liste des annonces : </p>
+    <ul>
+        {% for listing in listings %}
+        <li>{{ listing.title }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
