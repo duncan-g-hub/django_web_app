@@ -1,2 +1,3 @@
 .venv
 .idea
+merchex/db.sqlite3
