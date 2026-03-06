@@ -4,10 +4,7 @@ from listings.models import Band, Listing
 
 def hello(request):
     bands = Band.objects.all()
-    return render(request, "listings/hello.html",
-            {"first_band": bands[0],
-                   "second_band": bands[1],
-                   "third_band": bands[2],})
+    return render(request, "listings/hello.html",{"bands": bands})
 
 def about(request):
     return HttpResponse('<h1>À propos</h1> <p>Nous adorons merch !</p>')
