@@ -19,6 +19,7 @@ class Band(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
 class Listing(models.Model):
     title = models.fields.CharField(max_length=100)
     description = models.fields.CharField(max_length=400)
