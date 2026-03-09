@@ -16,6 +16,8 @@ class Band(models.Model):
 
     genre = models.fields.CharField(choices=Genre.choices, max_length=5)
 
+    def __str__(self):
+        return f"{self.name}"
 
 class Listing(models.Model):
     title = models.fields.CharField(max_length=100)
