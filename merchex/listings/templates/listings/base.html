@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'listings/styles.css' %}">
 </head>
 <body>
+    <nav><a href="{% url 'band-list' %}">Liste des groupes</a></nav>
     {% block content %}{% endblock %}
 </body>
 </html>
