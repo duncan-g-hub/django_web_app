@@ -31,3 +31,5 @@ class Listing(models.Model):
         posters = 'P'
         miscellaneous = 'M'
     type = models.fields.CharField(choices=Type.choices, max_length=2)
+
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
