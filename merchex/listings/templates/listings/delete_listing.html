@@ -1,14 +1,14 @@
 {% extends 'listings/base.html' %}
 {% block content %}
 
-<p>Etes-vous sûre de vouloir supprimer le groupe : {{ band }} ?</p>
+<p>Etes-vous sûre de vouloir supprimer l'annonce : {{ listing.title }} ?</p>
 
 <form action="" method="post">
     {% csrf_token %}
     <input type="submit" value="Supprimer">
 </form>
 
-<form action="{% url 'band-detail' band.id %}" >
+<form action="{% url 'listing-detail' listing.id %}" >
     <input type="submit" value="Retour">
 </form>
 

@@ -40,5 +40,5 @@ urlpatterns = [
     path('listings/<int:listing_id>/update/', views.update_listing, name='update-listing'),
 
     path('bands/<int:band_id>/delete', views.delete_band, name='delete-band'),
-
+    path('listings/<int:listing_id>/delete', views.delete_listing, name='delete-listing'),
 ]

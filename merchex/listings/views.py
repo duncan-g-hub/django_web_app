@@ -103,3 +103,11 @@ def delete_band(request, band_id):
         band.delete()
         return redirect('band-list')
     return render(request, "listings/delete_band.html",{"band": band})
+
+
+def delete_listing(request, listing_id):
+    listing = Listing.objects.get(id=listing_id)
+    if request.method == "POST":
+        listing.delete()
+        return redirect('listing-list')
+    return render(request, "listings/delete_listing.html",{"listing": listing})
