@@ -3,8 +3,8 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 
 from listings.models import Band, Listing
-from listings.forms import ContactUsForm
-from listings.forms import BandForm
+from listings.forms import ContactUsForm, BandForm, ListingForm
+
 
 
 def band_list(request):
@@ -48,6 +48,7 @@ def contact(request):
 def email_sent(request):
     return render(request,"listings/email_sent.html")
 
+
 def add_band(request):
     if request.method == "POST":
         form = BandForm(request.POST)
@@ -58,3 +59,13 @@ def add_band(request):
         form = BandForm()
     return render(request,"listings/add_band.html",{"form": form})
 
+
+def add_listing(request):
+    if request.method == "POST":
+        form = ListingForm(request.POST)
+        if form.is_valid():
+            listing = form.save()
+            return redirect('listing-detail', listing.id)
+    else :
+        form = ListingForm()
+    return render(request,"listings/add_listing.html",{"form": form})

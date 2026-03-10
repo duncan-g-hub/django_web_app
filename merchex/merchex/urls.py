@@ -34,5 +34,6 @@ urlpatterns = [
     path('about-us/', views.about, name='about'),
 
     path('bands/add/', views.add_band, name='add-band'),
+    path('listings/add/', views.add_listing, name='add-listing'),
 
 ]
