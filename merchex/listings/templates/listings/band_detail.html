@@ -13,4 +13,14 @@
 
     <p>Biographie : {{ band.biography }}</p>
 
+
+    {% if band.listing_set.all %}
+    <h3>Annonces : </h3>
+    <ul>
+        {% for listing in band.listing_set.all  %}
+        <li><a href="{% url 'listing-detail'  listing.id %}"> {{listing.title}} </a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
 {% endblock %}
