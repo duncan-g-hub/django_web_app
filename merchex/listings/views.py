@@ -66,6 +66,24 @@ def add_listing(request):
         if form.is_valid():
             listing = form.save()
             return redirect('listing-detail', listing.id)
-    else :
+    else:
         form = ListingForm()
     return render(request,"listings/add_listing.html",{"form": form})
+
+
+def update_band(request, band_id):
+    band = Band.objects.get(id=band_id)
+    form = BandForm(request.POST, instance=band)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('band-detail', band.id)
+    else:
+        form = BandForm(instance=band)
+
+    return render(request, "listings/update_band.html",{"band": band, 'form': form})
+
+
+
+
+

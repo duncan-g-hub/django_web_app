@@ -23,4 +23,6 @@
     </ul>
     {% endif %}
 
+    <a href="{% url 'update-band' band.id %}">Modifier le groupe</a>
+    <a href="{% url 'band-list' %}">Retourner à la liste des groupes</a>
 {% endblock %}
