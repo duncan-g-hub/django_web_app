@@ -6,7 +6,10 @@
     <h2>Annonces :</h2>
     <ul>
         {% for listing in listings %}
-        <li><a href="{% url 'listing-detail' listing.id %}">{{ listing.title }}</a></li>
+        <li>
+            <a href="{% url 'listing-detail' listing.id %}">{{ listing.title }}</a>
+            <a href="{% url 'update-listing' listing.id %}"> - [Éditer]</a>
+        </li>
         {% endfor %}
     </ul>
 
