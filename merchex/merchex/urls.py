@@ -38,4 +38,7 @@ urlpatterns = [
 
     path('bands/<int:band_id>/update/', views.update_band, name='update-band'),
     path('listings/<int:listing_id>/update/', views.update_listing, name='update-listing'),
+
+    path('bands/<int:band_id>/delete', views.delete_band, name='delete-band'),
+
 ]
